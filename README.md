@@ -24,6 +24,8 @@ Frauds
     Players use poker bots or otherwise work with others to develop collusive gaming policies.
    
    Circumventing gambling laws:
-   Three online poker websites were charged by the S. Attorney General for the Southern District of New York with circumventing U.S.    anti-gambling laws and misleading banks into processing billions of dollars in illegal betting profits.
+   Three online poker websites were charged by the S. Attorney General for the Southern District of New York with circumventing      U.S. anti-gambling laws and misleading banks into processing billions of dollars in illegal betting profits.
    
-  -Social media and fraud
+  -Social media and frau
+    Online there are a lot of profiles which promote things like Products, services, or secrets that require little
+    or no experience, but return hundreds or thousands of dollars a day. These profiles easily can get personal information if you     buy there "Product". The information can later be selled or can be used to get money from your private accounts.
