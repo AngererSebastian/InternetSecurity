@@ -30,6 +30,8 @@ Frauds
     Online there are a lot of profiles which promote things like Products, services, or secrets that require little
     or no experience, but return hundreds or thousands of dollars a day. These profiles easily can get personal information if you          buy there "Product". The information can later be selled or can be used to get money from your private accounts.
     
+   The difference between identity fraud and identitiy theft is that identity fraud is it if the thieve uses the stolen information. 
+
    Identity fraud                             
    - Creditcard fraud                           
    - Bank fraud 
@@ -39,8 +41,13 @@ Frauds
    - Low tech tatics
    - Malware   
    - Phishing
+        The thieve is trying to get personal information by luring the user in a fake website. It is usual that the imposer is trying           to shape is website like an trustworthy one.
+        
+        - Spear-Phishing
+           It is a new method of phishing. The hacker makes a direct attack on certain data with a .
+        - Pharming
+        - Man-in-the-Middle
    
-   The difference between identity fraud and identitiy theft is that identity fraud is it if the theft uses the stolen information. 
    
    How to act if you have been trapped
    
