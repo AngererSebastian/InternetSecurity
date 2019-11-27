@@ -30,10 +30,15 @@ Frauds
     Online there are a lot of profiles which promote things like Products, services, or secrets that require little
     or no experience, but return hundreds or thousands of dollars a day. These profiles easily can get personal information if you          buy there "Product". The information can later be selled or can be used to get money from your private accounts.
     
-   Identity fraud                             Identity theft
-   Creditcard fraud                           Phishing
-   Bank fraud                                 Malware
-                                              Low tech tatics
+   Identity fraud                             
+   - Creditcard fraud                           
+   - Bank fraud  
+   
+   Identity theft
+   - Low tech tatics
+   - Malware   
+   - Phishing
+   
    The difference between identity fraud and identitiy theft is that identity fraud is it if the theft uses the stolen information. 
    
    How to act if you have been trapped
