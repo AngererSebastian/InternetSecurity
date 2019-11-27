@@ -32,7 +32,8 @@ Frauds
     
    Identity fraud                             
    - Creditcard fraud                           
-   - Bank fraud  
+   - Bank fraud 
+   - Government documents or benefits fraud
    
    Identity theft
    - Low tech tatics
