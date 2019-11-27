@@ -44,7 +44,7 @@ Frauds
         The thieve is trying to get personal information by luring the user in a fake website. It is usual that the imposer is trying           to shape is website like an trustworthy one.
         
         - Spear-Phishing
-               It is a new method of phishing. The hacker makes a direct attack on certain data with a .
+               It is a new method of phishing. The hacker trys to get for example an email from your dear. The next step would be to                    look for greater targets like a bank with which the victim is often in contact.
         - Pharming
         - Man-in-the-Middle
    
