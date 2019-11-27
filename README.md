@@ -24,8 +24,22 @@ Frauds
     Players use poker bots or otherwise work with others to develop collusive gaming policies.
    
    Circumventing gambling laws:
-   Three online poker websites were charged by the S. Attorney General for the Southern District of New York with circumventing      U.S. anti-gambling laws and misleading banks into processing billions of dollars in illegal betting profits.
+   Three online poker websites were charged by the S. Attorney General for the Southern District of New York with circumventing            U.S. anti-gambling laws and misleading banks into processing billions of dollars in illegal betting profits.
    
-  -Social media and frau
+  -Social media and fraud
     Online there are a lot of profiles which promote things like Products, services, or secrets that require little
-    or no experience, but return hundreds or thousands of dollars a day. These profiles easily can get personal information if you     buy there "Product". The information can later be selled or can be used to get money from your private accounts.
+    or no experience, but return hundreds or thousands of dollars a day. These profiles easily can get personal information if you          buy there "Product". The information can later be selled or can be used to get money from your private accounts.
+    
+   Identity fraud                             Identity theft
+   Creditcard fraud                           Phishing
+   Bank fraud                                 Malware
+                                              Low tech tatics
+   The difference between identity fraud and identitiy theft is that identity fraud is it if the theft uses the stolen information. 
+   
+   How to act if you have been trapped
+   
+  - Call the companies where the fraud occurred.
+  - Place a fraud alert on your credit reports and review your credit reports for errors.
+  - Report your identity theft to the FTC.
+  - Consider reporting the crime to your local police department.
+   
