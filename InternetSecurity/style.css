@@ -1,7 +1,45 @@
-body {
-    background-color: #a5e3ee;
+body{
+    background-color: #454279;
+    color: whitesmoke;
+    font-family: "Segoe UI", "Carlito";
 }
 
-p {
-    font-family: "Segoe UI", "Carlito";
+h1.header {
+    font-size: 3em;
+}
+
+ul.header {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    background-color: #3b4447;
+    border: #65748a solid 1px;
+    border-radius: 5px;
+}
+
+.header li{
+    float: left;
+}
+
+.header a{
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.header a:hover{
+    background-color: #374a50;
+}
+
+.content {
+    background-color: rgba(48, 55, 77, 0.863);
+    margin-top: 0.5%;
+    margin-left: 2%;
+    width: 95%;
+    padding: .5%;
+    border: solid #8f9699 1px
 }
