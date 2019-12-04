@@ -15,13 +15,13 @@ Frauds
     Gambling fraud may be perpetrated in any game of chance, from sports betting to online poker. Some of the different types of         gambling fraud that may occur include:
 
     Match-fixing, sports fixing, or game rigging:
-    A game is played to achieve a pre-determined result that enriches scammers at the      expense of bookmakers.
+    A game is played to achieve a pre-determined result that enriches scammers at   the      expense of bookmakers.
    
     Betting fraud:
-    A scammer offers insider information and promises gambling profits in exchange for fees.
+    A scammer offers insider information and promises gambling profits in exchange     for fees.
    
     Collusive gaming: 
-    Players use poker bots or otherwise work with others to develop collusive gaming policies.
+    Players use poker bots or otherwise work with others to develop collusive         gaming policies.
    
    Circumventing gambling laws:
    Three online poker websites were charged by the S. Attorney General for the Southern District of New York with circumventing            U.S. anti-gambling laws and misleading banks into processing billions of dollars in illegal betting profits.
@@ -44,10 +44,11 @@ Frauds
         The thieve is trying to get personal information by luring the user in a fake website. It is usual that the imposer is trying           to shape is website like an trustworthy one.
         
         - Spear-Phishing
-               It is a new method of phishing. The hacker trys to get for example an email from your dear. The next step would be to                    look for greater targets like a bank with which the victim is often in contact.
+               It is a new method of phishing. The hacker trys to get for example                an email from your dear. The next step would be to                                 look for greater targets like a bank with which the victim is often in contact.
         - Pharming
+            The user is gets an invite to a fake website. Then they get a DNS-                 request for example through DNS spoofing. That means the connection               between an IP and a domain. So the thieve can catch the sent data. 
         - Man-in-the-Middle
-   
+            The thieve is between the two useres the man in the middle. He can                 recieve from both of the sides data.
    
    How to act if you have been trapped
    
