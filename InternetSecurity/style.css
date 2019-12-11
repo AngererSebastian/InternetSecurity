@@ -19,8 +19,21 @@ ul.header {
     border-radius: 5px;
 }
 
+.subheading
+{
+    color: lightgreen;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
 .header li{
     float: left;
+}
+
+h3
+{
+    font-size: 1.4em;
+    color: lightgreen;
 }
 
 .header a{
