@@ -1,42 +1,51 @@
 body{
-    background-color: #454279;
-    color: whitesmoke;
+    background-color: #353944;
+    color: #e5e9f0;
     font-family: "Segoe UI", "Carlito";
 }
 
-h1.header {
+header.index {
+
+    background-color: #2c3f63;
+
+    font-size: 4em;
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+}
+
+.index nav{
+    color: grey;
+}
+
+/*header and nav bar*/
+header h1 {
     font-size: 3em;
 }
 
-ul.header {
+header div
+{
+    color: #EBCB8B;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     overflow: hidden;
 
-    background-color: #3b4447;
-    border: #65748a solid 1px;
+    background-color: #4c566a;
+    border: #2e3440 solid 1px;
     border-radius: 5px;
 }
 
-.subheading
-{
-    color: lightgreen;
-    display: inline-block;
-    font-size: 0.9em;
-}
-
-.header li{
+nav li{
     float: left;
 }
 
-h3
-{
-    font-size: 1.4em;
-    color: lightgreen;
-}
-
-.header a{
+nav a{
     display: block;
     padding: 15px;
     color: white;
@@ -44,15 +53,41 @@ h3
     text-align: center;
 }
 
-.header a:hover{
+nav a:hover{
     background-color: #374a50;
 }
 
+/*formats the content of the site*/
 .content {
-    background-color: rgba(48, 55, 77, 0.863);
+    background-color: #576985;
     margin-top: 0.5%;
     margin-left: 2%;
     width: 95%;
     padding: .5%;
-    border: solid #8f9699 1px
+    border: solid #5e81ac 1px;
+
+    display: inline-block;
+}
+
+em{
+    color: rgb(113, 190, 94);
+}
+
+h3
+{
+    font-size: 1.4em;
+    color: #D08770;
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 50%;
+    max-height: 35%;
+}
+img.right {
+        float: right;
+}
+
+img.left{
+    float: left;
 }
