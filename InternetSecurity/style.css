@@ -4,6 +4,7 @@ body{
     font-family: "Segoe UI", "Carlito";
 }
 
+/*header of the index*/
 header.index {
 
     background-color: #2c3f63;
@@ -14,11 +15,55 @@ header.index {
 }
 
 .index h1 {
-    font-size: 4vw;
+    font-size: 5vw;
 }
 
-.index nav{
-    color: grey;
+div.index {
+    background-color: #7b8dac;
+    width: 75%;
+    margin: 2.5% auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+div.summary {
+    background-color: rgb(94, 73, 105);
+    
+    margin: .5% 1.5%;
+    width: 300px;
+    height: 350px;
+    display: inline-block;
+    overflow: hidden;
+
+    border: #D08770 solid 2px;
+    border-radius: 5px;
+}
+
+.summary a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    font-weight: 500;
+
+    margin: 0 auto;
+
+    color: white;
+    text-decoration: none;
+    word-wrap: anywhere; 
+}
+
+.summary:hover p{
+    visibility: visible;
+}
+
+.summary:hover a {
+    visibility: hidden;
+}
+
+.summary p {
+    font-size: 1.5em;
+    margin-top: 0;
+
+    visibility: hidden;
 }
 
 /*header and nav bar*/
