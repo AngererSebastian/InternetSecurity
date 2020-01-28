@@ -8,10 +8,13 @@ header.index {
 
     background-color: #2c3f63;
 
-    font-size: 4em;
     font-weight: bolder;
     padding: 20px;
     text-align: center;
+}
+
+.index h1 {
+    font-size: 4vw;
 }
 
 .index nav{
@@ -36,13 +39,14 @@ nav ul {
     margin: 0;
     overflow: hidden;
 
-    background-color: #4c566a;
+    background-color: #0e647e9c;
     border: #2e3440 solid 1px;
     border-radius: 5px;
 }
 
 nav li{
     float: left;
+    margin: auto;
 }
 
 nav a{
