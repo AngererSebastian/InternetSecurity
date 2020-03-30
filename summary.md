@@ -1,27 +1,35 @@
-HTBLA LEONDING/AA
+# Information
+- Name of the Organization: HTBLA LEONDING/AA
 
-Encryption
+- Project Title: Encryption
 
-Project Information
+- Timeframe: until the summer break
 
-We want to send encrypted file over a server to another client with public and private keys. 
+- By:
+  - Angerer Sebastian
+  - Detta Allessandro
 
-Our timelimit is till the end of our semester.
+# Summary
 
-This project will be prepared by Detta and Angerer.
+We are trying to have somebody encrypt a message with the public key of the other and send this pack of data over our server to the other client. In the beginning of this transaction the recieving end needs to sign an account up or gets an id when he says he wants to revieve data. The other party tries to "connect" to the recieving end, he then generates a public and private key, where he only sends the public key back to the sender, which then can encrypt their data and safely send it back over.
+Our goal with this project is to learn simple security precautions and server side operations.
 
-Other contacts are: Professor Klewein and Professor Reder
+# Methodology
 
-Project Summary
+When the reciever agrees to get an encrypted package, he generates the key pair and looks for a certain file on the server, which will create a file for the communication with the recieving end. When somebody wishes to send to this id/username he will recieve the public key and then encrypt the document he wants to transfer and send it over our server with the same proceedcur again.
 
-We want to create our own way to send data. 
+The server itself will be implemented with an queue of operation(FIFO) which will be all run. When some Computer sends a request it will be added at the end of the list and at the first possible moment the server will execude the next command. This kind of System could run quite slow on more intense traffic but with this scenario the simplicity is on the winning end for us.
 
-We will setup a server which can receive and send files to a other logged in client. It has a database, which  stores the logins, so you can log in. We want encrypt the data. 
+## Tasks
 
-Ther server has a queue with all of the operations. The server executes allways the first operation. If a client sends something the request will be added to the queue. This queue will be a json. 
+- Encrypt and Decrypt Files ( 1. Week)
+- Set up the server ( 2 - 3 Weeks)
+- send encrypted files ( 4 - 5 Weeks)
 
-Alessandro Detta and Sebastian Angerer will be working on this project.
+# Risks and Costs
 
-It will probably take till the end of semester.
+The only risk there is, is that it could be a huge time waste and we get a bad mark, but the only cost is again time
 
+# Conclusion
 
+I think we could manage this tasks and there might be some now concepts we haven't encountered before.
