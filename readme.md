@@ -7,7 +7,7 @@
 
 - By:
   - Angerer Sebastian
-  - Detta Allessandro
+  - Detta Alessandro
 
 # Summary
 
