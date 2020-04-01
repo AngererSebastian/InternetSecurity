@@ -11,7 +11,7 @@
 
 # Summary
 
-We are trying to have somebody encrypt a message with the public key of the other and send this pack of data over our server to the other client. In the beginning of this transaction the recieving end needs to sign an account up or gets an id when he says he wants to revieve data. The other party tries to "connect" to the recieving end, he then generates a public and private key, where he only sends the public key back to the sender, which then can encrypt their data and safely send it back over.
+We are trying to have somebody encrypt a message with the public key of the other and send this pack of data over our server to the other client. In the beginning of this transaction the recieving end needs to sign an account up or gets an id when he says he wants to recieve data. The other party tries to "connect" to the recieving end, he then generates a public and private key, where he only sends the public key back to the sender, which then can encrypt their data and safely send it back over.
 Our goal with this project is to learn simple security precautions and server side operations.
 
 # Methodology
