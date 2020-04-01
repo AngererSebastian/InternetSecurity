@@ -1,5 +1,5 @@
 # Information
-- Name of the Organization: HTBLA LEONDING
+- Name of the Organization: HTBLA LEONDING/AA
 
 - Project Title: Encryption
 
@@ -18,6 +18,13 @@ We are trying to have somebody encrypt a message with the public key of the othe
 Our goal with this project is to learn simple security precautions and server side operations.
 
 # Methodology
+## Website
+### General goals
+- intuitive
+- able to be accesed on all kinds devices
+- easy to navigate
+- modern design 
+
 When the reciever agrees to get an encrypted package, he generates the key pair and looks for a certain file on the server, which will create a file for the communication with the recieving end. When somebody wishes to send to this id/username he will recieve the public key and then encrypt the document he wants to transfer and send it over our server with the same proceedcur again.
 
 The server itself will be implemented with an queue of operation(FIFO) which will be all run. When some Computer sends a request it will be added at the end of the list and at the first possible moment the server will execude the next command. This kind of System could run quite slow on more intense traffic but with this scenario the simplicity is on the winning end for us.
@@ -30,6 +37,8 @@ The server itself will be implemented with an queue of operation(FIFO) which wil
 - Polish our Website with CSS or Bootstrap
 
 # Risks and Costs
+
+Since this is a school project we have no costs
 
 The only risk there is, is that it could be a huge time waste and we get a bad mark, but the only cost is again time
 
