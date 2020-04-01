@@ -10,7 +10,7 @@
   - Detta Alessandro
 
 # Summary
-## Web site
+## Website
 Our website will explain the dangers on the internet in a easy and simple way and give some advices on how to protect against them. We are also going to give some information about malicious software like a virus or a worm and about different kinds of scemes. We also want to dedicate a section of our website to encryption.
 
 ## Web application
