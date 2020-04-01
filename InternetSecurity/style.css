@@ -1,7 +1,9 @@
 body{
     background-color: #353944;
     color: #e5e9f0;
-    font-family: "Segoe UI", "Carlito";
+    font-family: sans-serif;
+
+    line-height: 1.4;
 }
 
 /*header of the index*/
@@ -40,7 +42,7 @@ div.summary {
 }
 
 .summary a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-size: 4em;
     font-weight: 500;
 
@@ -113,8 +115,8 @@ nav a:hover{
     margin-left: 2%;
     width: 95%;
     padding: .5%;
-    border: solid #5e81ac 1px;
 
+    border: solid #5e81ac 1px;
     display: inline-block;
 }
 
