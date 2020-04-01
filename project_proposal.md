@@ -25,6 +25,7 @@ Our goal with this project is to learn simple security precautions and server si
 - easy to navigate
 - modern design 
 
+## Web application
 When the reciever agrees to get an encrypted package, he generates the key pair and looks for a certain file on the server, which will create a file for the communication with the recieving end. When somebody wishes to send to this id/username he will recieve the public key and then encrypt the document he wants to transfer and send it over our server with the same proceedcur again.
 
 The server itself will be implemented with an queue of operation(FIFO) which will be all run. When some Computer sends a request it will be added at the end of the list and at the first possible moment the server will execude the next command. This kind of System could run quite slow on more intense traffic but with this scenario the simplicity is on the winning end for us.
@@ -34,7 +35,7 @@ The server itself will be implemented with an queue of operation(FIFO) which wil
 - Encrypt and Decrypt Files ( 1. Week)
 - Set up the server ( 2 - 3 Weeks)
 - send encrypted files ( 4 - 5 Weeks)
-- Polish our Website with CSS or Bootstrap
+- Polish our Website with CSS
 
 # Risks and Costs
 
