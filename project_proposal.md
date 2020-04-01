@@ -25,6 +25,8 @@ Our goal with this project is to learn simple security precautions and server si
 - easy to navigate
 - modern design 
 
+The content of the website will be written in html and the page will be designed with CSS. The rest will be in JavaScript or TypeScript. We want to structure the website in different pages so the user can find the wanted content easily. We also are going to have a navigation bar and on the front page there is going to be a short overview about all of the informations. The content will be written in a way that also normal people can understand it.
+
 ## Web application
 When the reciever agrees to get an encrypted package, he generates the key pair and looks for a certain file on the server, which will create a file for the communication with the recieving end. When somebody wishes to send to this id/username he will recieve the public key and then encrypt the document he wants to transfer and send it over our server with the same proceedcur again.
 
