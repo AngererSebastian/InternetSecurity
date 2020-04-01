@@ -1,5 +1,5 @@
 # Information
-- Name of the Organization: HTBLA LEONDING/AA
+- Name of the Organization: HTBLA LEONDING
 
 - Project Title: Encryption
 
