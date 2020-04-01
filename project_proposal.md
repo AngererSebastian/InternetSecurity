@@ -11,7 +11,7 @@
 
 # Summary
 ## Website
-Our website will explain the dangers on the internet in a easy and simple way and give some advices on how to protect against them. We are also going to give some information about malicious software like a virus or a worm and about different kinds of scemes. We also want to dedicate a section of our website to encryption.
+Our website is for the normal civilian who wants to inform himself about the dangers of the internet. Our website will explain the dangers on the internet in a easy and simple way and give some advices on how to protect against them. We are also going to give some information about malicious software like a virus or a worm and about different kinds of scemes. We also want to dedicate a section of our website to encryption.
 
 ## Web application
 We are trying to have somebody encrypt a message with the public key of the other and send this pack of data over our server to the other client. In the beginning of this transaction the recieving end needs to sign an account up or gets an id when he says he wants to recieve data. The other party tries to "connect" to the recieving end, he then generates a public and private key, where he only sends the public key back to the sender, which then can encrypt their data and safely send it back over.
@@ -38,6 +38,7 @@ The server itself will be implemented with an queue of operation(FIFO) which wil
 - Set up the server ( 2 - 3 Weeks)
 - send encrypted files ( 4 - 5 Weeks)
 - Polish our Website with CSS
+- Add a few more pages of information
 
 # Risks and Costs
 
