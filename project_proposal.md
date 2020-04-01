@@ -43,8 +43,7 @@ The server itself will be implemented with an queue of operation(FIFO) which wil
 
 Since this is a school project we have no costs
 
-The only risk there is, is that it could be a huge time waste and we get a bad mark, but the only cost is again time
+We could have some problems when we work on the web application since we have never done something like this, but i think we can solve them with the help of our teachers and the internet.
 
 # Conclusion
-
-I think we could manage this tasks and there might be some now concepts we haven't encountered before. 
+Our goal is to make a understandable and informative website and include a file transfer application. We have no risks that could danger this project.I think we could manage this tasks and there might be some now concepts we haven't encountered before. 
