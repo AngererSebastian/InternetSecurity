@@ -14,9 +14,23 @@
 Our website is for the normal civilian who wants to inform himself about the dangers of the internet. Our website will explain the dangers on the internet in a easy and simple way and give some advices on how to protect against them. We are also going to give some information about malicious software like a virus or a worm and about different kinds of scemes. We also want to dedicate a section of our website to encryption.
 
 ## Web application
-We are trying to have somebody encrypt a message with the public key of the other and send this pack of data over our server to the other client. In the beginning of this transaction the recieving end needs to sign an account up or gets an id when he says he wants to recieve data. The other party tries to "connect" to the recieving end, he then generates a public and private key, where he only sends the public key back to the sender, which then can encrypt their data and safely send it back over.
-Our goal with this project is to learn simple security precautions and server side operations.
+Our main goal with this application is to be a basic and simple intro into criptography for not so tech savy people, because everybody else shouldn't get serios advice from this software, because we aren't too familiar with these concepts ourselves
 
+Of course there a more minor goals to achieve this end goal described above. Below you see all the goals we want to implement right now so that applicaton can fulfill its purpose
+
+### Clientside
+- generate private and public keys locally
+- read the text of a given file
+- encrypt the contents of that file
+- decrypt recieved ciphertexts/files
+- establish a connection to another user through the server
+- share the public key to a server ( We want to make the server adjustable so anybody could host their own)
+- recieve the civertexts from the server
+
+### Serverside
+This server is basicly just a bridge to make a connection between two persons ( on one server there should be more than one connection possible)
+
+The way we want to implement the server is by a simple queue, which follows the FIFO principle. This queue will probably end up being a json file where diffrent commandos are stored, //TODO: add a way to make it more secure//
 # Problem
 We want to make the dangers that we are going to describe easy to understand so that not only a computer specialist can understand.
 
