@@ -2,13 +2,18 @@
 
 <html>
 	<head>
+		<script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
 		<script src="encrypt.js"></script>
+		<script src="generateKeys.js"></script>
 	</head>
 	<body>
 		<script>
-			console.log(2);
-			console.log(encrypt([5, 14], 2));
-			console.log(decrypt([11, 14], 4));
+			let key= generateKeyPair(7, 2);
+			let cipher
+			console.log(key);
+			cipher = encrypt(key[1], key[2], 2)
+			console.log("ciphertext: " + cipher);
+			console.log("decrypt: " + decrypt(key[0], key[2], cipher));
 		</script>
 	</body>
 </html>
