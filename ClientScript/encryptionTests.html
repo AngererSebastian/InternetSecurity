@@ -14,6 +14,12 @@
 			cipher = encrypt(key[1], key[2], 2)
 			console.log("ciphertext: " + cipher);
 			console.log("decrypt: " + decrypt(key[0], key[2], cipher));
+			console.log("\n");
+			console.log(byteArrayToString(['65', '97']));
+
+			console.log("Hello World");
+			cipher = encryptString("Hello World", key[2], key[1]);
+			console.log(decryptString(cipher, key[2], key[0]));
 		</script>
 	</body>
 </html>
