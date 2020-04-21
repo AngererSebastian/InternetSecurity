@@ -2,14 +2,15 @@
 
 <html>
 	<head>
+		<script type="text/javascript" src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
 		<script src="generateKeys.js"></script>
 	</head>
 
 	<body>
 		<script>
-			console.log(getBigPrime());
+			console.log(getBigPrime(1000, 100000000));
 			console.log(gcd(25, 5));
-			console.log(generateKeyPair(2, 7));
+			console.log(generateKeyPair());
 			console.log(generateKeyPair());
 		</script>
 	</body>

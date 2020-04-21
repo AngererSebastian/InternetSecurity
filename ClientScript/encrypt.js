@@ -1,11 +1,11 @@
 // keypair (private and the product)
-function decrypt (key, message)
+function decrypt (private, product, message)
 {
-	return encrypt (key, message);
+	return encrypt (private, product, message);
 }
 
 // keypair (public, product)
-function encrypt (key, message)
+function encrypt (public, product, message)
 {
-	return Math.pow(message, key[0]) % key[1];	
+	return bigInt(message).modPow(public, product);	
 }
