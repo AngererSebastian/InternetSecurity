@@ -20,9 +20,9 @@ Of course there a more minor goals to achieve this end goal described above. Bel
 
 ### Clientside
 - generate private and public keys locally
-- read the text of a given file
-- encrypt the contents of that file
-- decrypt recieved ciphertexts/files
+- read a text 
+- encrypt the text
+- decrypt recieved text
 - establish a connection to another user through the server
 - share the public key to a server ( We want to make the server adjustable so anybody could host their own)
 - recieve the civertexts from the server
@@ -64,4 +64,4 @@ Since this is a school project we have no costs
 We could have some problems when we work on the web application since we have never done something like this, but i think we can solve them with the help of our teachers and the internet.
 
 # Conclusion
-Our goal is to make a understandable and informative website and include a file transfer application. We have no risks that could danger this project. I think we could manage this tasks and there might be some now concepts we haven't encountered before. 
+Our goal is to make a understandable and informative website and include a text transfer application. We have no risks that could danger this project. I think we could manage this tasks and there might be some now concepts we haven't encountered before. 
