@@ -31,8 +31,9 @@ Of course there a more minor goals to achieve this end goal described above. Bel
 This server is basicly just a bridge to make a connection between two persons ( on one server there should be more than one connection possible)
 
 The way we want to implement the server is by a simple queue, which follows the FIFO principle. This queue will probably end up being a json file where diffrent commandos are stored, //TODO: add a way to make it more secure//
+
 # Problem
-We want to make the dangers that we are going to describe easy to understand so that not only a computer specialist can understand.
+The problem is there aren't many interactiv mediums where a beginner could learn a thing or two about cryptography, so we want to make an website where the user can go through the process of key generation and can also send a package to one of his friends, this package will be secured and the involved persons should also learn how a basic encryption algorithm works. *WE DON'T TRY TO MAKE AN SECURE PLATFORM.*
 
 # Methodology
 ## Website
@@ -50,6 +51,8 @@ For the client side we will use the bigInteger library from [peterolson](https:/
 
 ### Server
 We will use 2 json-servers (one for input the other for output) as interfaces so clients could communikate with our server. The server will just read the input.json process the commands in this file and output in output.json. The two json servers will run under two diffrent ports (-p <port>).
+
+The Server itself just needs to add IDs and redirect packages, we also need to make a switch that deletes an ID if it isn't used anymore.
 
 ## Tasks
 
