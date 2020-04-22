@@ -45,16 +45,20 @@ We want to make the dangers that we are going to describe easy to understand so 
 The content of the website will be written in html and the page will be designed with CSS. The rest will be in JavaScript or TypeScript. We want to structure the website in different pages so the user can find the wanted content easily. We also are going to have a navigation bar and on the front page there is going to be a short overview about all of the informations. The content will be written in a way that also normal people can understand it.
 
 ## Web application
-When the reciever agrees to get an encrypted package, he generates the key pair and looks for a certain file on the server, which will create a file for the communication with the recieving end. When somebody wishes to send to this id/username he will recieve the public key and then encrypt the document he wants to transfer and send it over our server with the same proceedcur again.
+### Client
+For the client side we will use the bigInteger library from [peterolson](https://github.com/peterolson/BigInteger.js) to store the cipher and the keys. This library is quite useful because it already has an modInv funktion which would be "complicated" to implement ourselves. To convert a message to the cipher we convert the message(string) to a byte array (*only works with ASCII*) and encrypt every single integer, which is not very secure but the goal of this project is not to make an secure plattform, because there will be many better alternatives for that, but to make an easy to understand introduction.
 
-The server itself will be implemented with an queue of operation(FIFO) which will be all run. When some Computer sends a request it will be added at the end of the list and at the first possible moment the server will execude the next command. This kind of System could run quite slow on more intense traffic but with this scenario the simplicity is on the winning end for us.
+### Server
+We will use 2 json-servers (one for input the other for output) as interfaces so clients could communikate with our server. The server will just read the input.json process the commands in this file and output in output.json. The two json servers will run under two diffrent ports (-p <port>).
 
 ## Tasks
 
-- Encrypt and Decrypt Files ( 1. Week)
-- Set up the server ( 2 - 3 Weeks)
-- send encrypted files ( 4 - 5 Weeks)
+- Encrypt and Decrypt Files 
+- Set up the server 
+- get the contents of a file (don't know if this will work out)
+- send encrypted files 
 - Polish our Website with CSS
+- make a coherrent colour scheme
 - Add a few more pages of information
 
 # Risks and Costs
