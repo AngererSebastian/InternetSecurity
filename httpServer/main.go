@@ -31,6 +31,7 @@ func HandleRequest (w http.ResponseWriter, request *http.Request) {
 
 	switch request.Method {
 	case "GET":
+		if !Userexists(path) { return }
 		fmt.Fprintln(w, messages[path])
 	case "POST":
 		buffer, err := ioutil.ReadAll(request.Body)
@@ -45,10 +46,17 @@ func HandleRequest (w http.ResponseWriter, request *http.Request) {
 		if path == "" {
 			messages[ree.Argument] = ""
 		} else {
+
+			if !Userexists(path) { return }
 			messages[path] = ree.Content
 		}
 
 	default:
 		fmt.Fprintln(w, "Server doesn't support this request")
 	}
+}
+
+func Userexists(user string) bool {
+	_, ok := messages[user]
+	return ok
 }
