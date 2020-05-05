@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<link rel = "stylesheet" href = "../InternetSecurity/style.css">
+	<title>LoginForm</title>
+
+	<script>
+		let user;
+		let ip;
+
+		function createUser() {
+			ip = document.getElementById("Iip").value;
+			user = document.getElementById("Iuser").value;
+
+			let request = new XMLHttpRequest();
+			request.open("POST", "http://" + ip, true);
+
+			request.send(JSON.stringify({
+				"Argument" : user,
+				"Content" : "",
+			}));
+		}
+
+		function sendMessage() {
+			let dest = document.getElementById("To").value;
+			let message = document.getElementById("Message").value;
+
+			let request = new XMLHttpRequest();
+			request.open("POST", "http://" + ip + "/" + dest, true);
+
+			request.send(JSON.stringify({
+				"Argument" : "",
+				"Content" : message,
+			}));
+		}
+
+		function retrieveMessages() {
+			let request = new XMLHttpRequest();
+			request.open("GET", "http://" + ip + "/" + user, true);
+
+			request.onload = function () {
+				document.getElementById("Retrieve").innerHTML = this.response;
+				console.log(this.response);
+			}
+
+			request.send();
+
+		}
+	</script>
+  </head>
+  <body>
+<div>
+    <label for="Ip">IP:Port</label><br>
+    <input type="text" id="Iip" name="IP" placeholder="IP"><br>
+    <label for="User">User (must be unique)</label><br>
+    <input type="text" id="Iuser" name="User" placeholder="User"><br>
+	<button onclick="createUser()">Create User</button>
+
+	<h3>Send a message</h3>
+	<label for="To">To: </label>
+	<input type="text" id="To" placeholder="To(Username)"><br>
+
+	<input type="text" id="Message" placeholder="Message"><br>
+	<button onclick="sendMessage()">Send</button>
+
+	<h3>Retrieve a message</h3>
+	<button onclick="retrieveMessages()">Retrieve Messages</button>
+	<p id="Retrieve"></p>
+</div>
+
+</body>
+</html>
