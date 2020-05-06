@@ -1,24 +1,24 @@
 :root{
-    --main-bg-color:  #353944;
+    --main-bg-color: #021B21;
     --main-textcolor:  #e5e9f0;
-    --main-emphasise: rgb(113, 190, 94);
-    --main-headers: #D08770;
+    --main-emphasise: #FF5879;
+    --main-headers: #44B5B1;
     
-    --nav-box: #0e647e9c;
-    --nav-box-border: #0e647e9c;
+    --nav-box: #065F73;
+    --nav-box-border: rgb(5, 76, 92);
     --nav-text: white;
-    --nav-hover:  #374a50;
+    --nav-hover:  #032C36;
 
-    --head-bg-color: /*#2c3f63*/#353944;
+    --head-bg-color: /*#2c3f63*/#021B21;
     
-    --index-border-color: #7b8dac;
-    --index-box-color:/* rgb(94, 73, 105)*/ #5f697a;
-    --index-box-border-color: /* #D08770*/#353944 ;
+    --index-border-color: #2E3340;
+    --index-box-color:/* rgb(94, 73, 105)*/ #032C36;
+    --index-box-border-color: /* #D08770*/rgb(2, 40, 49);
     --index-title :white;
     
     --header-theme: #EBCB8B;
 
-    --content-bg: #576985;
+    --content-bg: #2E3340;
     --content-box-border: #5e81ac;
 }
 
@@ -36,12 +36,17 @@ a{
 header.index {
 
     background-color: var(--head-bg-color);
-
+    border-radius: 3px;
     font-weight: bolder;
     padding: 20px;
     text-align: center;
 }
-
+header.generell{
+    background-color: var(--head-bg-color);
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+}
 .index h1 {
     font-size: 3em;
 }
@@ -52,6 +57,7 @@ div.index {
     margin: 2.5% auto;
     text-align: center;
     overflow: hidden;
+    border-radius: 2px;
 }
 
 div.summary {
@@ -110,7 +116,7 @@ nav ul {
     padding: 0;
     margin: 0;
     overflow: hidden;
-
+    text-align: center;
     background-color: var(--nav-box);
     border: var(--nav-box-border) solid 1px;
     border-radius: 5px;
@@ -119,6 +125,7 @@ nav ul {
 nav li{
     float: left;
     margin: auto;
+    text-align: center;
 }
 
 nav a{
