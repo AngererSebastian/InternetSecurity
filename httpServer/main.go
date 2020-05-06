@@ -55,7 +55,7 @@ func (h MessageHandler) ServeHTTP (w http.ResponseWriter, request *http.Request)
 		if path != "" {
 			fmt.Println("Sending message")
 			if !Userexists(path) { return }
-			messages[path] += ree.Content
+			messages[path] += ree.Content + "\n.\n"
 		} else {
 			fmt.Println("Creating User")
 			if Userexists(ree.Argument) { return }
