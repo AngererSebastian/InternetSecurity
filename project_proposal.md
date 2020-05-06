@@ -49,11 +49,22 @@ The content of the website will be written in html and the page will be designed
 ### Client
 For the client side we will use the bigInteger library from [peterolson](https://github.com/peterolson/BigInteger.js) to store the cipher and the keys. This library is quite useful because it already has an modInv funktion which would be "complicated" to implement ourselves. To convert a message to the cipher we convert the message(string) to a byte array (*only works with ASCII*) and encrypt every single integer, which is not very secure but the goal of this project is not to make an secure plattform, because there will be many better alternatives for that, but to make an easy to understand introduction.
 
+Our little scripts can be easily accessed through some simple function calls:
+```javascript
+	/*
+	* arr[0] privateKey
+	* arr[1] publicKey
+	* arr[2] product
+	*/
+	keypair = generateKeyPair()
+
+	//encrypt and decrypt a string
+	let cipher = encryptString(message, product, publicKey)
+	let message = decrypt(cipher, product, privateKey)
+```
 ### Server
-We will use 2 json-servers (one for input the other for output) as interfaces so clients could communikate with our server. The server will just read the input.json process the commands in this file and output in output.json. The two json servers will run under two diffrent ports (-p <port>).
-
-The Server itself just needs to add IDs and redirect packages, we also need to make a switch that deletes an ID if it isn't used anymore.
-
+We will make a simple http server written in go, you can make a user with a POST request on */* and the user name stands in the *Arguments* field. To send a user a specific message it is also done with a POST request but this on on */<User>* and the message itself is inside the *Content* field. Finally to read a message you just need to make a GET request on the wished user.
+Internally all the users and messages are saved inside a map (`map[string] string`) this allows for quick and easy access.
 ## Tasks
 
 - Encrypt and Decrypt Files 
