@@ -30,9 +30,16 @@ Of course there a more minor goals to achieve this end goal described above. Bel
 - recieve the civertexts from the server
 
 ### Serverside
-This server is basicly just a bridge to make a connection between two persons ( on one server there should be more than one connection possible)
+The server will just be a bridge to recieve a package from one client and send it to another. Because this web-application isn't made for security, but for visualition/education, it should be fine to let everyone grab every message.
+The way we can see that our application is run, is only in a private net so there shouldn't be any major problems with our approach.
 
-The way we want to implement the server is by a simple queue, which follows the FIFO principle. This queue will probably end up being a json file where diffrent commandos are stored, //TODO: add a way to make it more secure//
+We want to write the server in go and it should have an easy interface like this:
+```
+	GET "http://<ip:port>/<username to retrieve messages>/" //to retrieve all messages of a given user
+	POST "http://<ip:port>/" { "Argument":"<username>", "Content": ""} // to make a new user
+	POST "http://<ip:port>/<user>" { "Argument":"", "Content": "<message>"} // to send a message to a given user
+```
+We are thinking if we want to discard the json thing because, we are using only one string at a given time, but time will tell
 
 # Problem
 The problem is there aren't many interactiv mediums where a beginner could learn a thing or two about cryptography, so we want to make an website where the user can go through the process of key generation and can also send a package to one of his friends, this package will be secured and the involved persons should also learn how a basic encryption algorithm works. *WE DON'T TRY TO MAKE AN SECURE PLATFORM.*
@@ -64,10 +71,14 @@ Our little scripts can be easily accessed through some simple function calls:
 	let cipher = encryptString(message, product, publicKey)
 	let message = decrypt(cipher, product, privateKey)
 ```
+For conversations with the server we just use old XmlHTTPRequest, because they are already provided
+
 ### Server
 We will make a simple http server written in go, you can make a user with a POST request on */* and the user name stands in the *Arguments* field. To send a user a specific message it is also done with a POST request but this on on */<User>* and the message itself is inside the *Content* field. Finally to read a message you just need to make a GET request on the wished user.
 Internally all the users and messages are saved inside a map (`map[string] string`) this allows for quick and easy access.
-## Tasks
+We use the provided [net/http](https://golang.org/pkg/net/http/) for the http server, because javascript wouldn't allow us to make direct TCP connections.
+
+# Tasks
 
 - Encrypt and Decrypt Files 
 - Set up the server 
@@ -84,4 +95,4 @@ Since this is a school project we have no costs
 We could have some problems when we work on the web application since we have never done something like this, but i think we can solve them with the help of our teachers and the internet.
 
 # Conclusion
-Our goal is to make a understandable and informative website and include a text transfer application. We have no risks that could danger this project. I think we could manage this tasks and there might be some now concepts we haven't encountered before. 
+Our goal is to make a understandable and informative website and include a text transfer application. We have no risks that could danger this project. I think we could manage this tasks and there might be some now concepts we haven't encountered before. There will also be more stuff to learn on the way.
