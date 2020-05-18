@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta name = "description" content="Information about internet security, frauds, scams and a scam simulator where you write with a scammer">
+        <meta name="keywords" content="Security ,Fraud ,ScamSimulator">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="style.css">
+        <title>Websecurity Malware</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Internet Security/<div>App<div></h1>
+                <nav>
+                    <ul>        
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="frauds.html">Frauds</a></li>
+                        <li><a href="malware.html">Malware</a></li>
+                        <li><a href="acknowledgeDanger.html">Acknowledge Dangers</a></li>
+                        <li><a href="protection.html">Protection</a></li>
+                        <li><a href="app.html">App</a></li>
+                    </ul>
+                </nav>               
+        </header>
+     	
+		<div class="content">
+			<h3>Setup to use the App</h3>
+
+			<p>
+				To use this webapp you need to setup our custom webserver.
+				The source files can be found on our
+				<a href="https://github.com/AngererSebastian/InternetSecurity">github</a>
+				under the folder httpServer. The server is written in go and can be compiled
+				with a normal <em>go-compiler</em>(
+				<a href="golang.org">go</a> for windows, mac and linux,
+				<a href="https://www.gnu.org/software/gcc/">gcc-go</a> with binaries for linux)
+			</p>
+
+			<ol>
+				<li>
+					You need to get a copy of our source code. You can clone
+					clone the repo with <em>git clone</em> or just download
+					the zip file. We won't be realesing any binaries, so you 
+					need to compile it youself.
+				</li>
+
+				<li>
+					Next you need to compile the server. If you decided to download
+					the standart go compiler you just need to run <em>go build</em>
+					inside the desired directory and the program should be compiled
+					after a while. For the gcc option you will need to dig into the
+					documentation. We may make a makefile for easier use in the future
+				</li>
+
+				<li>
+					The rest should be straight forward, you just need to run
+					./httpServer &lt;port&gt; (.\ for windows). If you want to run
+					this program from anywhere (for whatever reason) you could put
+					it inside you PATH variable. But we don't recommend this.
+				</li>
+			</ol>
+		</div>
+
+		<div class="content">
+			<h3>Further Reading</h3>
+			<p>
+				We don't recommend to run this server on a public lan
+				or in any lan where you don't trust everybody. The service
+				is also not meant as an secure messaging plattform. It
+				should be used for educational purposes only. You shoudn't
+				send any sensitive data over it.
+			</p>
+		</div>
+    </body>
+</html>
