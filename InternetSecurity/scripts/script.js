@@ -1,35 +1,54 @@
 let user;
 let ip;
-let keys;
+let myKeys;
+let otherKeys;
+
+let cipher;
 
 function createUser() {
 	ip = document.getElementById("Iip").value;
 	user = document.getElementById("Iuser").value;
+	myKeys = generateKeyPair();
 
 	let request = new XMLHttpRequest();
 	request.open("POST",  `http://${ip}`, true);
 
 	request.send(JSON.stringify({
-		"Argument" : user,
-		"Content" : "",
+		"Sender" : user,
+		"Argument": myKeys.lock,
+		"Argument2": myKeys.product,
 	}));
 
-	keys = generateKeyPair();
 	toggleDisplay('login');
 	toggleDisplay('messenger');
 }
 
-function sendMessage() {
+async function sendMessage() {
 	let dest = document.getElementById("ITo").value;
 	let message = document.getElementById("IMessage").value;
+	await getKey(dest)
 
+	cipher = encryptString(message, otherKeys.Product, otherKeys.Public)
 	let request = new XMLHttpRequest();
-	request.open("POST", `http://${ip}/${user}`, true);
+	request.open("POST", `http://${ip}/${dest}`, true);
+		cipher = BigIntToIntArray(cipher);
 
 	request.send(JSON.stringify({
 		"Argument" : "",
-		"Content" : message,
+		"Content" : cipher,
 	}));
+}
+
+async function getKey(from) {
+
+	let request = new XMLHttpRequest();
+	request.open("GET", `http://${ip}/${from}/keys`, true);
+
+	request.onload = function () {
+		otherKeys = JSON.parse(this.response);
+	}
+	request.send();
+	await sleep(100);
 }
 
 function switchMode() {
@@ -46,26 +65,25 @@ function retrieveMessages() {
 	request.open("GET", `http://${ip}/${user}`, true);
 
 	request.onload = function () {
-		document.getElementById("Reciever").innerHTML = this.response;
-		console.log(this.response);
+		let cipher = JSON.parse(this.response);
+		console.log(cipher);
+		message = decryptString ( cipher, myKeys.product, myKeys.key);
+		console.log(message);
+		document.getElementById("Reciever").innerHTML = message;
 	}
 
 	request.send();
 
-}
-
-function retrieveKeys() {
-	let request = new XMLHttpRequest();
-	request.open("GET", `http://${ip}/${user}/keys`, true);
-
-	request.onload = function () {
-		document.getElementById("Retrieve").innerHTML = this.response;
-		console.log(this.response);
-	}
-
-	request.send();
 }
 
 function toggleDisplay(id) {
 	document.getElementById(id).classList.toggle('hidden');
+}
+
+function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function isUndefined (toCheck) {
+	return typeof toCheck === 'undefined';
 }
