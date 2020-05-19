@@ -31,5 +31,9 @@ function generateKeyPair () {
 
 	key = lock.modInv(phi);
 
-	return [key, lock, product];
+	return {
+		key : key,
+		lock : lock,
+		product : product,
+	};
 }
