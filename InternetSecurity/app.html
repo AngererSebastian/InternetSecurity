@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta name = "description" content="Information about internet security, frauds, scams and a scam simulator where you write with a scammer">
+        <meta name="keywords" content="Security ,Fraud ,ScamSimulator">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="style.css">
+        <title>Websecurity Fraud</title>
+
+		<script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+		<script src="scripts/generateKeys.js"></script>
+		<script src="scripts/encrypt.js"></script>
+		<script src="scripts/script.js"></script>
+
+		<style>
+			.hidden {
+				display: none;
+			}
+		</style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Internet Security/<div>App<div></h1>
+                <nav>
+                    <ul>        
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="frauds.html">Frauds</a></li>
+                        <li><a href="malware.html">Malware</a></li>
+                        <li><a href="acknowledgeDanger.html">Acknowledge Dangers</a></li>
+                        <li><a href="protection.html">Protection</a></li>
+						<li><a href="app.html">App</a></li>
+						<li><a href="instructions.html">Instructions</a></li>
+                    </ul>
+                </nav>               
+        </header>
+		
+	<div class="content" id="login">
+		<h3>Login/Create a Session</h3>
+		<p>
+			Before using our Webapp you need to configure an "account",
+			just input the ip and the port of you local server
+			(to see how to setup a server see <a href="instructions.html">instructions</a>
+			page. The second thing is just a username that needs to be unique.
+		</p>
+
+		<label for="Ip">IP:Port</label><br>
+		<input type="text" id="Iip" name="IP" placeholder="IP:Port"><br>
+		<label for="User">User (must be unique)</label><br>
+		<input type="text" id="Iuser" name="User" placeholder="User"><br>
+		<button onclick="createUser()">Create User</button>
+	</div>
+
+	<div class="content hidden" id="messenger">
+		<p>
+			This is the messanger part of the web app. You could just use
+			it <em>without further thought</em>, but that would defeat the pupose of the app.
+			So if you want to see how the the encryption works click on the <em>encryption button</em>
+			and if you want to know more about the way the communication works just click on the 
+			<em>communication button</em>
+		</p>
+
+		<label for="ITo">To</label><br>
+		<input type="text" id="ITo" placeholder="To (another user)"><br>
+		<label for="IMessage">Message(only text)</label><br>
+		<input type="text" id="IMessage" placeholder="Message"><br>
+		<button onclick="sendMessage()">Send Message</button>
+
+		<button onclick="toggleDisplay('crypto')">Toggle Encryption</button>
+		<div id="crypto" class="hidden">
+		</div>
+		<br>
+		<button onclick="toggleDisplay('info')">Toggle messager info</button>
+		<div id="info" class="hidden">
+		</div>
+		<button onclick="switchMode()">Recieve Messages</button>
+	</div>
+
+	<div class="content hidden" id="reciever">
+		<button onclick="retrieveMessages()">Reload Messages</button>
+		<button onclick="switchMode()">Send more messages</button>
+		<pre id="Reciever"></pre>
+	</div>
