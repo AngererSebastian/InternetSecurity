@@ -10,16 +10,17 @@
 		<script>
 			let key= generateKeyPair(7, 2);
 			let cipher
+			console.log('product ' + key.product);
 			console.log(key);
-			cipher = encrypt(key[1], key[2], 2)
+			cipher = encrypt(key.lock, key.product, 2)
 			console.log("ciphertext: " + cipher);
-			console.log("decrypt: " + decrypt(key[0], key[2], cipher));
+			console.log("decrypt: " + decrypt(key.key, key.product, cipher));
 			console.log("\n");
 			console.log(byteArrayToString(['65', '97']));
 
 			console.log("Hello World");
-			cipher = encryptString("Hello World", key[2], key[1]);
-			console.log(decryptString(cipher, key[2], key[0]));
+			cipher = encryptString("Hello World", key.product, key.lock);
+			console.log(decryptString(cipher, key.product, key.key));
 		</script>
 	</body>
 </html>
