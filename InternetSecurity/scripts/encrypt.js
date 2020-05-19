@@ -42,13 +42,13 @@ function encryptString (str, product, public)
 		cipher.push( encrypt(public, product, byteArr[i]));
 	}
 
-	console.log(byteArr);
+	console.log(cipher);
 	return cipher;
 }
 
 function decryptString (cipher, product, private) 
 {
-	let byteArr = [];
+	byteArr = [];
 
 	for (let i = 0; i < cipher.length; i++) {
 		byteArr.push(decrypt(private, product, cipher[i]));
@@ -56,4 +56,13 @@ function decryptString (cipher, product, private)
 
 	console.log(byteArr);
 	return byteArrayToString(byteArr);
+}
+
+function BigIntToIntArray (big) {
+	let intArr = []
+	for (let i = 0; i < big.length; i++) {
+		intArr.push(big[i].toJSNumber());
+	}
+
+	return intArr;
 }
