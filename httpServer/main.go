@@ -12,20 +12,20 @@ import (
 type Request struct {
 	Sender string
 	Argument string
-	Content string
+	Argument2 string
+	Content []int
 }
 
 type Key struct {
-	Sender string
 	Public string
 	Product string
 }
 
 type MessageHandler struct {}
 
-var messages map[string] string = make(map[string] string)
-var keys map[string] []Key = make(map[string] []Key)
-var KeyReq map[string] string = make(map[string] string)
+// global variables
+var messages map[string] []int = make(map[string] []int)
+var keys map[string] Key = make(map[string] Key)
 
 func main () {
 	err := http.ListenAndServe(":" + os.Args[1], new(MessageHandler))
@@ -39,30 +39,28 @@ func (h MessageHandler) ServeHTTP (w http.ResponseWriter, request *http.Request)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	path := strings.Split(request.URL.Path[1:], "/")
-	fmt.Println(path)
 
 	switch request.Method {
 	//gets the messages of a user
 	case "GET":
-		fmt.Println("Retrieving")
 		if !Userexists(path[0]) { return }
 
 		if len(path) == 1 {
-			fmt.Fprintln(w, messages[path[0]])
-			return
-		}
+			tmp, err := json.Marshal(messages[path[0]])
+			if err != nil {
+				fmt.Println("Couldn't convert message")
+			}
 
-		switch path[1] {
-		case "keys":
+			w.Write(tmp)
+		} else if path[1] == "keys" {
+
 			buffer, err := json.Marshal(keys[path[0]])
 			if err != nil {
 				fmt.Println("Couldn't convert key")
 			}
 
+			fmt.Println("retrieve Keys: ", string(buffer))
 			w.Write(buffer)
-
-		case "requests":
-			fmt.Fprintln(w, KeyReq[path[0]])
 		}
 
 	case "POST":
@@ -80,34 +78,32 @@ func (h MessageHandler) ServeHTTP (w http.ResponseWriter, request *http.Request)
 
 		if path[0] == "" {
 			fmt.Println("Creating User")
-			if Userexists(ree.Argument) { return }
-			messages[ree.Argument] = ""
-			keys[ree.Argument] = make([]Key, 1, 5)
+			//if Userexists(ree.Sender) { return }
+			messages[ree.Sender] = make([]int, 1, 1)
+			keys[ree.Sender] = Key {
+				Public: ree.Argument,
+				Product: ree.Argument2,
+			}
+			fmt.Println(keys[ree.Sender])
 		}
 
 		if !Userexists(path[0]) { return }
 
+		fmt.Println(path, len(path))
 		if len(path) == 1 {
 			fmt.Println("Sending message")
-			messages[path[0]] += ree.Content + "\n.\n"
-			return
+			messages[path[0]] = ree.Content
+			fmt.Println(messages[path[0]])
 		}
 
-		switch path[1] {
-		case "keys":
-			key := Key {
-				Sender: ree.Sender,
+		/*	key := Key {
 				Public: ree.Argument,
-				Product: ree.Content,
+				Product: ree.Argument2,
 			}
 
-			keys[path[0]] = append(keys[path[0]], key)
-
-		case "requests":
-			KeyReq[path[0]] = ree.Argument
-		default:
-			return
-		}
+			keys[path[0]][ree.Sender] = key
+			fmt.Println(keys[path[0]][ree.Sender])
+		}*/
 
 	default:
 		fmt.Fprintln(w, "Server doesn't support this request")
