@@ -68,19 +68,20 @@
 		<label for="ITo">To</label><br>
 		<input type="text" id="ITo" placeholder="To (another user)"><br>
 		<label for="IMessage">Message(only text)</label><br>
-		<input type="text" id="IMessage" placeholder="Message"><br>
+		<textarea id="IMessage" rows="5" cols="50" style="width: 50%; height: 4rem;">Write a message here</textarea>
+		<br>
 		<button onclick="sendMessage()">Send Message</button>
+		<button onclick="switchMode()">Recieve Messages</button>
 
-		<button onclick="toggleDisplay('crypto')">Toggle Encryption</button>
+		<br><button class="uncover" onclick="toggleDisplay('crypto')">See more about encryption</button><br>
 		<div id="crypto" class="hidden">
 			TODO: write how the encryption works and show live examples
 		</div>
 		<br>
-		<button onclick="toggleDisplay('info')">Toggle messager info</button>
-		<div id="info" class="hidden">
+		<button class="uncover" onclick="toggleDisplay('info')">See more about the comunication system</button>
+		<br><div id="info" class="hidden">
 			TODO: write how the communication works here
 		</div>
-		<button onclick="switchMode()">Recieve Messages</button>
 	</div>
 
 	<div class="content hidden" id="reciever">

@@ -164,7 +164,7 @@ img.left{
     float: left;
 }
 
-input[type="text"] {
+input[type="text"], pre, textarea {
     border: solid var(--content-box-border) 2px;
 	background-color: var(--input-bg);
 	color: white;
@@ -184,8 +184,16 @@ button {
 	text-align: center;
 	margin-top: 0.5%;
 	height: 2rem;
-	width: 8rem;
+	padding: 0 2rem;
 }
+
+button.uncover {
+	border: none;
+	border-top : solid var(--content-box-border) 2px;
+	background-color: inherit;
+	text-align: left;
+}
+
 .topnav {
     overflow: hidden;
     background-color: var(--nav-box);
