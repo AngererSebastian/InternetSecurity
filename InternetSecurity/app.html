@@ -14,12 +14,6 @@
 		<script src="scripts/generateKeys.js"></script>
 		<script src="scripts/encrypt.js"></script>
 		<script src="scripts/script.js"></script>
-
-		<style>
-			.hidden {
-				display: none;
-			}
-		</style>
     </head>
 
     <body>
@@ -68,20 +62,17 @@
 		<label for="ITo">To</label><br>
 		<input type="text" id="ITo" placeholder="To (another user)"><br>
 		<label for="IMessage">Message(only text)</label><br>
-		<textarea id="IMessage" rows="5" cols="50" style="width: 50%; height: 4rem;">Write a message here</textarea>
+		<textarea id="IMessage" rows="5" placeholder="Write a message here" cols="50" style="width: 50%; height: 4rem;"></textarea>
 		<br>
 		<button onclick="sendMessage()">Send Message</button>
 		<button onclick="switchMode()">Recieve Messages</button>
 
 		<br><button class="uncover" onclick="toggleDisplay('crypto')">See more about encryption</button><br>
 		<div id="crypto" class="hidden">
-			TODO: write how the encryption works and show live examples
 		</div>
 		<br>
 		<button class="uncover" onclick="toggleDisplay('info')">See more about the comunication system</button>
-		<br><div id="info" class="hidden">
-			TODO: write how the communication works here
-		</div>
+		<br><div id="info" class="hidden"></div>
 	</div>
 
 	<div class="content hidden" id="reciever">
