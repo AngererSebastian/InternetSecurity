@@ -173,6 +173,7 @@ input[type="text"], pre, textarea {
 	padding: 0.2%;
 	margin-left: 1rem;
 	font-size: 1rem;
+	font-family: sans-serif;
 	height: 2rem;
 	width: 25%;
 }
