@@ -1,3 +1,7 @@
+//the minimum value of an keycomponent to ensure ascii can
+//be encoded message^key % q * p => q * p > 128
+const rootOfBiggestAscii = 13; 
+
 function getBigPrime (minimum, maximum) {
 	let prime;
 
@@ -8,28 +12,34 @@ function getBigPrime (minimum, maximum) {
 	return prime;
 }
 
+function getOtherKeyElement(q) {
+	let p;
+	do {
+	p = getBigPrime(rootOfBiggestAscii, 255);
+	}while (q.eq(p));
+
+	return p;
+}
+
 function generateKeyPair () {
 
 	let lock;
-	let key;
 
-	let phi, product; 
-	let q = getBigPrime(1, 255);
-	let p = getBigPrime(1, 255);
+	const q = getBigPrime(rootOfBiggestAscii, 255);
+	const p = getOtherKeyElement(q);
 
 	console.log("q " + q);
 	console.log("p " + p);
 
-	phi = q.subtract(1).times(p.subtract(1));
-	product = q.times(p);
+	const phi = q.subtract(1).times(p.subtract(1));
+	const product = q.times(p);
 
 	do{
 		lock = getBigPrime(1, phi);
-	}while (!phi.mod(lock) && lock != q && lock != p);
+		console.log(`${phi.mod(lock)} phi: ${phi} lock: ${lock}`);
+	}while (phi.mod(lock).eq(bigInt.zero) && !lock.eq(q) && !lock.eq(p));
 
-	console.log("lock " + lock);
-
-	key = lock.modInv(phi);
+	const key = lock.modInv(phi);
 
 	return {
 		key : key,
