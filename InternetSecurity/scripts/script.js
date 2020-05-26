@@ -21,14 +21,17 @@ function createUser() {
 
 	toggleDisplay('login');
 	toggleDisplay('messenger');
+
+	document.getElementById('oKeys').innerHTML = JSON.stringify(myKeys);
 }
 
-async function sendMessage() {
+function sendMessage() {
 	let dest = document.getElementById("ITo").value;
 	let message = document.getElementById("IMessage").value;
-	await getKey(dest)
+	getKey(dest)
 
 	cipher = encryptString(message, otherKeys.Product, otherKeys.Public)
+	reportSendMessage(message, cipher);
 	let request = new XMLHttpRequest();
 	request.open("POST", `http://${ip}/${dest}`, true);
 		cipher = BigIntToIntArray(cipher);
@@ -39,16 +42,22 @@ async function sendMessage() {
 	}));
 }
 
-async function getKey(from) {
+//sends the information to the user explaination
+function reportSendMessage(message, cipher) {
+	cipher = byteArrayToString(cipher);
+	document.getElementById('oMessage').innerHTML = message;
+	document.getElementById('oCipher').innerHTML = cipher;
+}
+
+function getKey(from) {
 
 	let request = new XMLHttpRequest();
-	request.open("GET", `http://${ip}/${from}/keys`, true);
+	request.open("GET", `http://${ip}/${from}/keys`, false);
 
 	request.onload = function () {
 		otherKeys = JSON.parse(this.response);
 	}
 	request.send();
-	await sleep(100);
 }
 
 function switchMode() {

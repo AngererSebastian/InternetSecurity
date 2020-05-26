@@ -69,10 +69,40 @@
 
 		<br><button class="uncover" onclick="toggleDisplay('crypto')">See more about encryption</button><br>
 		<div id="crypto" class="hidden">
+			<p>
+				If you want to learn how to calculate the keys
+				and how to encypt and decrypt look at our other interactive 
+				<a href="encryption.html">site</a>.
+				Here we will be focusing on how it works in "action"
+				first here the keys that have been generated:
+			</p>
+
+			<pre id="oKeys"></pre>
+
+			<p>
+				The messages you send over this messanger will be encrypted with the key
+				of the other participant
+			</p>
+
+			<h4>Unencrypted Last send Message</h4>
+			<pre id="oMessage"></pre>
+			<h4>Encrypted (cipher)</h4>
+			<pre id="oCipher"></pre>
+			
+			<p>
+				While we still have the original message, we couldn't get
+				it from the cipher, because we used the public key of another
+				person and so it can <em>only</em> be encrypted by the <em>private key</em>
+				of the person, which naturally we don't have.
+			</p>
+
+			<p>
+				like we already said you need <em>numbers</em> to encrypt
+				something. So that we could encrypt string (messages)
+				we just used the <em>ASCII</em> values of every char
+				and encrypted them all with the same keys.
+			</p>
 		</div>
-		<br>
-		<button class="uncover" onclick="toggleDisplay('info')">See more about the comunication system</button>
-		<br><div id="info" class="hidden"></div>
 	</div>
 
 	<div class="content hidden" id="reciever">
