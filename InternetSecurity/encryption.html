@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta name = "description" content="Information about internet security, frauds, scams and a scam simulator where you write with a scammer">
+        <meta name="keywords" content="Security ,Fraud ,ScamSimulator">
+        <meta charset="UTF-8">
+	<script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+        <script type="text/javascript" src="site.js"></script>
+	<script src="scripts/generateKeys.js"></script>
+	<script src="scripts/encrypt.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Websecurity Home</title> 
+    </head>
+
+    <body>
+        <header>
+            <h1>Internet Security/<div>Frauds<div></h1>
+               <div class="topnav" id="myTopnav">        
+                    <a href="index.html">Home</a>
+                    <a href="frauds.html">Frauds</a>
+                    <a href="malware.html">Malware</a>
+                    <a href="acknowledgeDanger.html">Acknowledge Dangers</a>
+                    <a href="protection.html">Protection</a>
+		    <a href="encryption.html">Encryption</a>
+                    <a href="app.html">App</a>
+                    <a href="instructions.html">Instructions</a>
+
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+	       </div>
+	</header>
+
+	<div class="content" id="introduction">
+	<h3>Encryption</h3>
+	<p>
+		To ensure Security there a many different types of message encryption.
+		Ones with just one key, also called <em>symmentrical</em> encryption and ones with
+		key pairs where one encrypts and the other decrypts. They all have their uses
+		but we will focus on the dual key system. The specific method we use for this
+		page and our communication platform is called RSA. While we are sure our
+		implementation <em>is not secure</em>, we think it is fine because our goals
+		with this site are just educational ones.
+        </p>
+
+	<p>
+		This part of our webpage will just focus on how to generate the RSA keys.
+		If you want how something is encrypted or decrypted see our web app under
+		<a href="app.html">here</a>.
+		But if you're interested in encryption we recommend to read through this site first.
+		If you want to learn more about key generation <em>click the button</em> below!
+	</p>
+	<button onclick="switchView('introduction','getValues')">Continue</button>
+	</div>
+
+	<div class="content hidden" id="getValues">
+		<h3>Generate Key Parts</h3>
+
+		<p>
+			The first part to generate a key pair is to generate <em>two</em>
+			preferably high <em>non identical prime numbers</em>, two make for a better demonstration
+			you will need to input two prime numbers (q and p) which can't be the same number.
+			To make calculations fast we recommend a range around 1 - 255 per prime.
+			(If you need to implement this somewhere seriously, you probably should
+			refer <em>other sources</em> and the generated number should of course be higher)
+		</p>
+		<label>Q: </label>
+		<input type="text" id="Q" placeholder="Unique Prime"> <br>
+		<label>P: </label>
+		<input type="text" id="P" placeholder="Unique Prime"> <br>
+
+	<script>
+		function generateKeysAndSwitch () {
+			const q = bigInt(document.getElementById('Q').value);
+			const p = bigInt(document.getElementById('P').value);
+			generateWithShow( q, p);
+			switchView('getValues', 'getKeys');
+		}
+	</script>
+	<button onclick="generateKeysAndSwitch()">Continue</button>
+	</div>
+
+	<div class="content hidden" id="getKeys">
+		<h3>Generate Keys</h3>
+		<p>
+			The next step is to calculate the basic components of the
+			key calculation process. The first thing is to calculate the
+			product of the two primes, which is also the second part of 
+			each key
+		</p>
+
+		<section>
+			<div id="oQ"></div> * <div id="oP"></div> = <div id="oProduct"></div>
+		</section>
+
+		<p>
+			The next important value we need to find is the product of the phi
+			function of the product. The phi function says how many <em>coprimes</em> are below
+			that number. If the Argument is a prime the output will the prime number minus one.
+			Also the phi function of an product is the same as the phi functions of the factors.
+			So our calculation will be:
+		</p>
+
+		<section>
+			&phi; = (<div id="oQ2"></div> - 1) * (<div id="oP2"></div> - 1) = <div id="oPhi"></div>
+		</section>
+
+		<p>
+			With these values we can now calculate keys. First we need the first part of the
+			<em>public key</em>, which is used to encrypt messages (the second part is the product). This key has two criteria it
+			needs to accomplish. First it needs to be <em>smaller than &phi;</em> and it needs
+			to be coprime with &phi; and the product, that means these two numbers aren't allowed to share any
+			factors. The candidates for the public key are:
+		</p>
+
+		<section>
+			<div id="lockCandidates"></div><br>
+			We use the value <em><div id="oLock"></div></em> for further calculations
+		</section>
+
+		<p>
+			The last part of the key generation is the private key (which is used to decrypt
+			messages). The private key is defined as <em>private * public % &phi; = 1</em>.
+			The % is the <em>modulo</em> operator and returns the remainder of a division.
+			To solve this equation we need to calculate the mod inverse of the public key and
+			phi (if you want to know how just search the web for an algorithm, but most of them
+			look quite messy), if you don't want to use the mod inverse, you could just bruteforce
+			and try any number until one gives the right answer.
+		</p>
+
+		<section>
+			Our private key = <div id="oPrivate"></div>
+		</section>
+		<button onclick="switchView('getKeys','Encrypt')">Encrypting</button>
+	</div>
+
+	<div class="content hidden" id="Encrypt">
+		<h3>Encryption</h3>
+		<p>
+			The basics to encrypt a message is to get a number from it, we won't cover that here
+		and then plug it into a simple formula
+		</p>
+		<section>
+			Encryption : m ^ e % product <br>
+			Decryption : c ^ d % product <br> <br>
+			<em>m</em> : Message <br>
+			<em>c</em> : Cipher (encrypted message) <br>
+			<em>e</em> : public key <br>
+			<em>d</em> : private
+		</section>
+
+		<p>
+			If you want to test it, try our little
+		<a href="app.html">web app</a>
+		</p>
+	</div>
+    </body>
+</html>

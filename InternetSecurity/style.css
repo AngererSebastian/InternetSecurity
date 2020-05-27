@@ -164,17 +164,16 @@ img.left{
     float: left;
 }
 
-input[type="text"], pre, textarea {
+input[type="text"], pre, textarea, section {
     border: solid var(--content-box-border) 2px;
 	background-color: var(--input-bg);
 	color: white;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	padding: 0.2%;
+	padding: 0.5%;
 	margin-left: 1rem;
 	font-size: 1rem;
 	font-family: sans-serif;
-	height: 2rem;
 	width: 25%;
 }
 
@@ -226,6 +225,10 @@ button.uncover {
 
   .hidden {
 	display: none;
+  }
+
+  section div {
+	  display: inline-block;
   }
   
   @media screen and (max-width: 750px) {

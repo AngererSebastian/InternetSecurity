@@ -6,3 +6,8 @@ function myFunction() {
       x.className = "topnav";
     }
 }
+
+function switchView (hide, show) {
+	document.getElementById(hide).classList.toggle('hidden');
+	document.getElementById(show).classList.toggle('hidden');
+}
