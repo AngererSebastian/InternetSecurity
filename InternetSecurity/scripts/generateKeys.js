@@ -62,6 +62,11 @@ function setInnerOfId (id, content) {
 
 function generateWithShow (q , p) {
 
+	if(!bigInt(q).isPrime() || !bigInt(p).isPrime()) {
+		console.log('invalid input');
+		return;
+	}
+
 	const phi = q.subtract(1).times(p.subtract(1));
 	const product = q.times(p);
 
