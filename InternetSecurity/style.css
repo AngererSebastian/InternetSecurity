@@ -1,4 +1,4 @@
-:root{
+:root {
     --main-bg-color: #021B21;
     --main-textcolor:  #e5e9f0;
     --main-emphasise: #FF5879;
@@ -24,7 +24,7 @@
 	--input-bg: #535866
 }
 
-body{
+body {
     background-color:var(--main-bg-color);
     color: var(--main-textcolor);
     font-family: sans-serif;
@@ -32,7 +32,7 @@ body{
     line-height: 1.4;
 }
 
-a{
+a {
     color: var(--index-title);
 }
 
@@ -62,18 +62,7 @@ div.summary {
     border-radius: 5px;
 }
 
-.summary a {
-    font-family: sans-serif;
-    font-size: 4em;
-    font-weight: 500;
-
-    margin: 0 auto;
-
-    text-decoration: none;
-    word-wrap: anywhere; 
-}
-
-.summary:hover p{
+.summary:hover p {
     visibility: visible;
 }
 
@@ -93,8 +82,7 @@ header h1 {
     font-size: 3em;
 }
 
-header div
-{
+header div {
     color: var(--header-theme);
     display: inline-block;
     font-size: 0.9em;
@@ -113,11 +101,11 @@ nav ul {
 	display: flex;
 }
 
-nav li{
+nav li {
     text-align: center;
 }
 
-nav a{
+nav a {
     display: block;
     padding: 15px;
     color: var(--nav-text);
@@ -125,7 +113,7 @@ nav a{
     text-align: center;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: var(--nav-hover);
 }
 
@@ -141,12 +129,19 @@ nav a:hover{
     display: inline-block;
 }
 
-em{
+em {
     color: var(--main-emphasise);
 }
 
-h3
-{
+a {
+	color: var(--main-headers);
+}
+
+.index a {
+	color: white;
+}
+
+h3 {
     font-size: 1.4em;
     color: var(--main-headers);
     text-transform: uppercase;
@@ -156,26 +151,33 @@ img {
     max-width: 50%;
     max-height: 35%;
 }
+
 img.right {
-        float: right;
+	float: right;
 }
 
-img.left{
-    float: left;
+img.left {
+	float: left;
 }
 
 input[type="text"], pre, textarea, section {
+
     border: solid var(--content-box-border) 2px;
 	background-color: var(--input-bg);
 	color: white;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	padding: 0.5%;
+	width: 25%;
 	margin-left: 1rem;
 	font-size: 1rem;
 	font-family: sans-serif;
-	width: 25%;
+	overflow: hidden;
 }
+
+/*input[type="text"] {
+	width: 25%;
+}*/
 
 button {
     border: solid var(--main-emphasise) 2px;
@@ -200,7 +202,6 @@ button.uncover {
     border: var(--nav-box-border) solid 1px;
     border-radius: 5px;
     width: 100%;
-    
 }
   
   .topnav a {
@@ -240,7 +241,9 @@ button.uncover {
   }
   
   @media screen and (max-width: 750px) {
-    .topnav.responsive {position: relative;}
+    .topnav.responsive {
+		position: relative;
+	}
     .topnav.responsive .icon {
       position: absolute;
       right: 0;

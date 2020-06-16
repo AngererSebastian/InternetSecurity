@@ -22,7 +22,12 @@ function createUser() {
 	toggleDisplay('login');
 	toggleDisplay('messenger');
 
-	document.getElementById('oKeys').innerHTML = JSON.stringify(myKeys);
+	writeKeys(myKeys);
+}
+
+function writeKeys (keys) {
+	const out = `public : ${myKeys.lock}\nproduct : ${myKeys.product}\nprivate : ${myKeys.key}`;
+	document.getElementById('oKeys').innerHTML = out;
 }
 
 function sendMessage() {
