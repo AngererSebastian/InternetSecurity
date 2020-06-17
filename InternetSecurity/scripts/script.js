@@ -22,7 +22,12 @@ function createUser() {
 	toggleDisplay('login');
 	toggleDisplay('messenger');
 
-	document.getElementById('oKeys').innerHTML = JSON.stringify(myKeys);
+	writeKeys(myKeys);
+}
+
+function writeKeys (keys) {
+	const out = `public : ${myKeys.lock}\nproduct : ${myKeys.product}\nprivate : ${myKeys.key}`;
+	document.getElementById('oKeys').innerHTML = out;
 }
 
 function sendMessage() {
@@ -78,11 +83,19 @@ function retrieveMessages() {
 		console.log(cipher);
 		message = decryptString ( cipher, myKeys.product, myKeys.key);
 		console.log(message);
-		document.getElementById("Reciever").innerHTML = message;
+		encodeHtml(message, 'Reciever');
 	}
 
 	request.send();
 
+}
+
+function encodeHtml(str, id) {
+	str.replace(/[\u007F - \uFFFF]|[\u003C - \u003E]/g, function(ch) {
+		return `&#${ch.getCodeAt(0)}`;
+	})
+
+	document.getElementById(id).innerHtml = str;
 }
 
 function toggleDisplay(id) {
