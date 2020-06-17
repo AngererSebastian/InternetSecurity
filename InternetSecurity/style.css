@@ -203,7 +203,7 @@ button.uncover {
 	  display: inline-block;
   }
   
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -211,7 +211,7 @@ button.uncover {
     }
   }
   
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     .topnav.responsive {
 		position: relative;
 	}
