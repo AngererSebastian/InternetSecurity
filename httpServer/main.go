@@ -36,6 +36,10 @@ var messages map[string] []int = make(map[string] []int)
 var keys map[string] Key = make(map[string] Key) //the key the user has
 
 func main () {
+	if len(os.Args) != 2 {
+		fmt.Println("Usage:\n\thttpServer <port>")
+		return
+	}
 	/*
 	* starts the server and serves all request through the messagehandler
 	* which has a mehtod ServeHTTP with an Writer and the request data
