@@ -22,11 +22,11 @@ Of course there a more minor goals to achieve this end goal described above. Bel
 
 ### Clientside
 - generate private and public keys locally
-- read a text 
 - encrypt the text
 - decrypt recieved text
-- establish a connection to another user through the server
+- establish a "connection" to another user through the server
 - share the public key to a server ( We want to make the server adjustable so anybody could host their own)
+- get the keys of a certain user from the server
 - recieve the civertexts from the server
 
 ### Serverside
@@ -34,10 +34,23 @@ The server will just be a bridge to recieve a package from one client and send i
 The way we can see that our application is run, is only in a private net so there shouldn't be any major problems with our approach.
 
 We want to write the server in go and it should have an easy interface like this:
-```
-	GET "http://<ip:port>/<username to retrieve messages>/" //to retrieve all messages of a given user
-	POST "http://<ip:port>/" { "Argument":"<username>", "Content": ""} // to make a new user
-	POST "http://<ip:port>/<user>" { "Argument":"", "Content": "<message>"} // to send a message to a given user
+```sh
+	#gets all messages of a certain user
+	GET "http://<ip:port>/<username to retrieve messages>/"
+
+	# gets the public key of the user
+	GET "http://<ip:port>/<username>/keys"
+
+	# writes an message to the user
+	# the content is stored inside an int array, because it is easier to process
+	# and the messages will probalby get encrypted
+	POST "http://<ip:port>/<user>" 
+	{ "Argument":"", "Content": [message as int array]}
+
+	#creates a new user under the sender name
+	POST "http://<ip:port>/" 
+	# Argument 1 & 2 hold the public key for the new user
+	{ "Sender":"<username>", "Argument": "<public1>", "Argument": "public2"}
 ```
 We are thinking if we want to discard the json thing because, we are using only one string at a given time, but time will tell
 
