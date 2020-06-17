@@ -91,21 +91,14 @@ function retrieveMessages() {
 }
 
 function encodeHtml(str, id) {
-	str.replace(/[\u007F - \uFFFF]|[\u003C - \u003E]/g, function(ch) {
-		return `&#${ch.getCodeAt(0)}`;
+	str = str.replace(/[\u007F - \uFFFF]|[\u003C - \u003E]/g, function(ch) {
+		return `&#${ch.charCodeAt(0)}`;
 	})
 
-	document.getElementById(id).innerHtml = str;
+	console.log('&amp;');
+	document.getElementById(id).innerHTML = str;
 }
 
 function toggleDisplay(id) {
 	document.getElementById(id).classList.toggle('hidden');
-}
-
-function sleep(ms) {
-	  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function isUndefined (toCheck) {
-	return typeof toCheck === 'undefined';
 }
