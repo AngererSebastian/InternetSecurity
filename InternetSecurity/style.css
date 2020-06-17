@@ -226,3 +226,10 @@ button.uncover {
       text-align: left;      
     }
   }
+
+footer {
+	background-color: var(--index-box-color);
+	text-align: right;
+	color: white;
+	padding: 2%;
+}
